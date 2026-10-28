@@ -4,6 +4,7 @@ import hashlib
 import sys
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 from sklearn.datasets import load_iris, load_wine
 
@@ -45,9 +46,9 @@ def main() -> None:
     if calculated.issubset(iris.columns):
         expected_sepal = iris["sepal length (cm)"] * iris["sepal width (cm)"]
         expected_petal = iris["petal length (cm)"] * iris["petal width (cm)"]
-        if not iris["sepal_area"].eq(expected_sepal).all():
+        if not np.allclose(iris["sepal_area"], expected_sepal):
             raise AssertionError("Неверные значения sepal_area")
-        if not iris["petal_area"].eq(expected_petal).all():
+        if not np.allclose(iris["petal_area"], expected_petal):
             raise AssertionError("Неверные значения petal_area")
 
 
