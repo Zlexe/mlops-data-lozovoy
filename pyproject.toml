@@ -1,0 +1,19 @@
+[project]
+name = "mlops-data-lozovoy"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Vadim Lozovoy",email = "vadimlozovoj005@gmail.com"}
+]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "dvc (==3.67.1)",
+    "clearml (==2.1.12)",
+    "pandas (==3.1.0)",
+    "scikit-learn (==1.9.1)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
